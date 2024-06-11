@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import './components/Header'
+import './components/Header';
 import Header from './components/Header';
 import MainLayout from './components/MainLayout';
 
