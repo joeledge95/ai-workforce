@@ -1,4 +1,9 @@
-.main-content {
-  display: flex;
-  justify-content: space-between;
+.main-layout {
+  display: grid;
+  grid-template-areas: 
+  'left right'
+  'inputs buttons';
+  grid-template-rows: 4fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
 }

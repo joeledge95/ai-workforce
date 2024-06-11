@@ -1,5 +1,5 @@
 import React from 'react';
-import './inputs.css';
+import './Inputs.css';
 
 const Inputs = () => (
   <div className="inputs-container">
