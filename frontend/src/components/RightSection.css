@@ -1,0 +1,4 @@
+.right-section {
+  grid-area: right;
+  height: 100%;
+}

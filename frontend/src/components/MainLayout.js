@@ -9,8 +9,10 @@ const MainLayout = () => (
   <main className="main-layout">
     <LeftSection />
     <RightSection />
-    <Inputs />
-    <ButtonContainer />
+    <div className="interaction-container">
+      <Inputs />
+      <ButtonContainer />
+    </div>
   </main>
 );
 
