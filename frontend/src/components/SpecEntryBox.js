@@ -2,37 +2,33 @@ import React, { useState, useRef } from 'react';
 import './SpecEntryBox.css';
 
 const TextEntryBox = () => {
-  const [bulletMode, setBulletMode] = useState(false);
   const textAreaRef = useRef(null);
-
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      const start = textAreaRef.current.selectionStart;
-      const end = textAreaRef.current.selectionEnd;
-      const value = textAreaRef.current.value;
-      const bullet = bulletMode ? '\n• ' : '\n';
-      textAreaRef.current.value =
-        value.substring(0, start) + bullet + value.substring(end);
-      textAreaRef.current.selectionStart = textAreaRef.current.selectionEnd =
-        start + bullet.length;
-    }
-  };
+  const [text, setText] = useState('');
 
   const handleButtonClick = () => {
-    setBulletMode(!bulletMode);
+    const newText = text + (text ? '\n' : '') + '• ';
+    setText(newText);
+
+    // Set focus to the textarea and move the cursor to the end
     textAreaRef.current.focus();
+    textAreaRef.current.selectionStart = textAreaRef.current.selectionEnd =
+      newText.length;
+  };
+
+  const handleChange = (e) => {
+    setText(e.target.value); // Update the state with the new value of the textarea
   };
 
   return (
     <div className="text-entry-container">
       <button className="bullet-button" onClick={handleButtonClick}>
-        {bulletMode ? 'Switch to Normal Text' : 'Switch to Bullet Points'}
+        Insert Bullet
       </button>
       <textarea
         ref={textAreaRef}
+        value={text}
+        onChange={handleChange}
         className="text-entry"
-        onKeyDown={handleKeyDown}
       ></textarea>
     </div>
   );
