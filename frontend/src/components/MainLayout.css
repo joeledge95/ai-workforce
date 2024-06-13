@@ -5,6 +5,8 @@
   'interaction interaction';
   grid-template-rows: 7fr 1fr;
   grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  padding: 0.7rem;
   height: 100%;
 }
 

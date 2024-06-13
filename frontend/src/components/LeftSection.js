@@ -1,8 +1,11 @@
 import React from 'react';
-import './LeftSection.css';
+import './Section.css';
 
 const LeftSection = () => (
-  <div className="left-section">
+  <div
+    className="section"
+    style={{ gridArea: 'left', backgroundColor: 'grey' }}
+  >
     <h2>TODO</h2>
   </div>
 );
