@@ -1,0 +1,25 @@
+.text-entry-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bullet-button {
+  width: 30%;
+}
+
+.text-entry {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00bcd4;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap; /* Preserves whitespace and line breaks */
+  resize: none;
+  flex: 1;
+}

@@ -1,12 +1,13 @@
 import React from 'react';
 import './Section.css';
+import SpecEntryBox from './SpecEntryBox';
 
 const RightSection = () => (
   <div
-    className="section"
+    className="section right-section"
     style={{ gridArea: 'right', backgroundColor: 'pink' }}
   >
-    <h2>TODO</h2>
+    <SpecEntryBox />
   </div>
 );
 
