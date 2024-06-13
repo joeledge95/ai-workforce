@@ -1,3 +1,5 @@
 .inputs-container {
   display: flex;
+  margin-right: 0.7rem;
+  gap: 0.7rem;
 }

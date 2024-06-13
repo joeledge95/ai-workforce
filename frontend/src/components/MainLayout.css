@@ -13,4 +13,6 @@
 .interaction-container {
   grid-area: interaction;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
