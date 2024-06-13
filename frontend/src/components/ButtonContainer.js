@@ -11,19 +11,19 @@ const ButtonContainer = () => {
       text: 'View Mode',
       color: textColor,
       backgroundColor: `hsl(270, ${saturation}, ${lightness})`,
-      onClick: () => alert('Button 1 clicked'),
+      onClick: () => alert('Button in development.'),
     },
     {
       text: 'Upload Files',
       color: textColor,
       backgroundColor: `hsl(210, ${saturation}, ${lightness})`,
-      onClick: () => alert('Button 1 clicked'),
+      onClick: () => alert('Button in development.'),
     },
     {
       text: 'RUN',
       color: textColor,
       backgroundColor: `hsl(120, ${saturation}, ${lightness})`,
-      onClick: () => alert('Button 1 clicked'),
+      onClick: () => alert('Button in development.'),
     },
   ];
 
