@@ -3,3 +3,8 @@
   margin-right: 0.7rem;
   gap: 0.7rem;
 }
+
+#max-gpt-calls,
+#hard-max-gpt-calls {
+  width: 5rem;
+}
