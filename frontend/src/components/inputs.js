@@ -1,24 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './Inputs.css';
 
-const Inputs = () => {
-  // State for form elements
-  const [formData, setFormData] = useState({
-    password: '',
-    maxGptCalls: 1000,
-    hardMaxGptCalls: 1200,
-  });
-
-  // Handle input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
+const Inputs = ({ password, maxGptCalls, hardMaxGptCalls, handleChange }) => {
   return (
     <div className="inputs-container">
       <div className="input-group">
@@ -27,7 +11,7 @@ const Inputs = () => {
           type="password"
           id="password"
           name="password"
-          value={formData.password}
+          value={password}
           onChange={handleChange}
         />
       </div>
@@ -37,7 +21,7 @@ const Inputs = () => {
           type="number"
           id="max-gpt-calls"
           name="maxGptCalls"
-          value={formData.maxGptCalls}
+          value={maxGptCalls}
           onChange={handleChange}
         />
       </div>
@@ -47,12 +31,19 @@ const Inputs = () => {
           type="number"
           id="hard-max-gpt-calls"
           name="hardMaxGptCalls"
-          value={formData.hardMaxGptCalls}
+          value={hardMaxGptCalls}
           onChange={handleChange}
         />
       </div>
     </div>
   );
+};
+
+Inputs.propTypes = {
+  password: PropTypes.string.isRequired,
+  maxGptCalls: PropTypes.number.isRequired,
+  hardMaxGptCalls: PropTypes.number.isRequired,
+  handleChange: PropTypes.func,
 };
 
 export default Inputs;
