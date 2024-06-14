@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ButtonContainer.css';
 import Button from './Button';
 
-const ButtonContainer = () => {
+const ButtonContainer = ({ handleSubmit }) => {
   const textColor = '#ffffff';
   const saturation = '50%';
   const lightness = '70%';
@@ -23,7 +24,7 @@ const ButtonContainer = () => {
       text: 'RUN',
       color: textColor,
       backgroundColor: `hsl(120, ${saturation}, ${lightness})`,
-      onClick: () => alert('Button in development.'),
+      onClick: handleSubmit,
     },
   ];
 
@@ -40,6 +41,10 @@ const ButtonContainer = () => {
       ))}
     </div>
   );
+};
+
+ButtonContainer.propTypes = {
+  handleSubmit: PropTypes.func,
 };
 
 export default ButtonContainer;

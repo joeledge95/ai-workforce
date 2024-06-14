@@ -14,6 +14,10 @@ const MainLayout = () => {
     specText: '',
   });
 
+  // State for response
+  const [responseData, setResponseData] = useState('');
+  const [error, setError] = useState(null);
+
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,9 +28,33 @@ const MainLayout = () => {
     });
   };
 
+  // Handle submitting form to the backend
+  const handleSubmit = async () => {
+    const url = 'http://localhost:5000/api/data'; // TODO
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Success:', data);
+        setResponseData(data);
+      } else {
+        throw new Error('Failed to send data');
+      }
+    } catch (error) {
+      setError(`Error: ${error.message}`);
+    }
+  };
+
   return (
     <main className="main-layout">
-      <LeftSection />
+      <LeftSection responseData={responseData} error={error} />
       <RightSection specText={formData.specText} handleChange={handleChange} />
       <div className="interaction-container">
         <Inputs
@@ -35,7 +63,7 @@ const MainLayout = () => {
           hardMaxGptCalls={formData.hardMaxGptCalls}
           handleChange={handleChange}
         />
-        <ButtonContainer />
+        <ButtonContainer handleSubmit={handleSubmit} />
       </div>
     </main>
   );
