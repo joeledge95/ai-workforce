@@ -1,0 +1,11 @@
+.button {
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgb(84, 84, 84);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  filter: brightness(0.85); /* Darken the background on hover */
+}
